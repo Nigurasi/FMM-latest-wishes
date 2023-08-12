@@ -25,7 +25,6 @@ class FMMSpider(scrapy.Spider):
         wish_titles = [t.rstrip().strip() for t in response.css('div.event p.text-lg::text').getall()]
         wish = response.css('div.profile-title h2::text').get().rstrip().strip()
         child_details = response.css('div.profile-cover h3::text').get().rstrip().strip()
-        # TODO: fix Lukasz with div case https://www.mammarzenie.org/marzyciele/10054-%C5%81ukasz
 
         if "spełnienie marzenia" not in wish_titles:
             pass
